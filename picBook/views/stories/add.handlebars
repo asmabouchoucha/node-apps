@@ -1,0 +1,51 @@
+<h1>Add Pic</h1>
+<div class="row">
+  <form action="/pics" method="post" class="col s12"enctype="multipart/form-data">
+    <div class="row">
+      <div class="input-field">
+        
+          
+    <div class="file-field input-field" >
+      <div class="btn grey">
+        <span>File</span>
+        <input name="mypic" type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    
+    </div>
+    {{#if file}}
+    <img src="{{file}}" class="img-responsive" height="500" width="500">
+    {{/if}}
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <select name="status">
+          <option value="public" selected>Public</option>
+          <option value="private">Private</option>
+          <option value="unpublished">Unpublished</option>
+        </select>
+        <label for="status">Status</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <p>
+        <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" checked="checked">
+        <label for="filled-in-box">Allow Comments</label>
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <h5>Description:</h5>
+        <textarea name="body"  ></textarea>
+      </div>
+    </div>
+
+    <input type="submit" value="Save" class="btn">
+  </form>
+</div>
